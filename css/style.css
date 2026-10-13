@@ -37,23 +37,16 @@ main h3 {
   text-transform: uppercase;
   border-bottom: 3px solid black;
   text-align: center;
-  color: var(--DarkGrey, #3a3a3a);
-  text-align: center;
-  font-family: Rubik;
+  color: var(--darkGrey);
   font-size: 32px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   padding-top: 10px;
 }
 main h2 {
-  color: var(--DarkGrey, #3a3a3a);
+  color: var(--darkGrey);
   text-align: center;
-  font-family: Roboto;
   font-size: 40px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   margin-bottom: 54px;
 }
 
@@ -101,6 +94,7 @@ footer p {
   display: none;
 }
 
+/* MAISONS */
 .houses {
   display: flex;
   justify-content: space-around;
@@ -113,15 +107,18 @@ footer p {
   width: 140px;
   height: 140px;
   text-align: center;
+  transition: transform 0.3s, background 0.3s;
 }
 .houses > div:hover {
-  background: #fff6e6;
+  background: var(--light);
+  transform: scale(1.1);
 }
 .houses img {
   width: 121px;
   height: 136px;
 }
 
+/* PERSONNAGES */
 .characters {
   display: flex;
   justify-content: space-around;
@@ -135,14 +132,42 @@ footer p {
   width: 150px;
   height: 150px;
   border-radius: 150px;
-  border: 8px solid var(--Gold, #b99049);
-  background: url(<path-to-image>), lightgray -1.24px 0px/101.653% 141.566% no-repeat;
+  border: 8px solid var(--gold);
+  background: lightgray;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   object-fit: cover;
+  transition: border-color 0.3s;
 }
 .characters p {
   text-align: center;
-  color: var(--Gold, #b99049);
+  color: var(--gold);
+  transition: color 0.3s;
+}
+
+/* Couleur de la maison au survol */
+.characters .gryffindor:hover img {
+  border-color: var(--red);
+}
+.characters .gryffindor:hover p {
+  color: var(--red);
+}
+.characters .slytherin:hover img {
+  border-color: var(--green);
+}
+.characters .slytherin:hover p {
+  color: var(--green);
+}
+.characters .hufflepuff:hover img {
+  border-color: var(--yellow);
+}
+.characters .hufflepuff:hover p {
+  color: var(--yellow);
+}
+.characters .ravenclaw:hover img {
+  border-color: var(--blue);
+}
+.characters .ravenclaw:hover p {
+  color: var(--blue);
 }
 
 /* PAGE PERSO */
@@ -162,7 +187,10 @@ footer p {
 }
 .page_perso .perso__right > div {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+.page_perso .perso__right p {
+  width: 200px;
 }
 .page_perso .perso__right p.attr {
   font-weight: bold;
@@ -186,14 +214,16 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 30px;
 }
 
+/* RESPONSIVE */
 @media screen and (max-width: 425px) {
   header {
     width: 90%;
   }
   header h1,
-header ul {
+  header ul {
     display: none !important;
   }
   header .header__left {
@@ -207,7 +237,24 @@ header ul {
 
   .houses {
     flex-direction: column;
-    align-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .page_perso .perso {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .page_perso .perso__right > div {
+    margin-top: 15px;
+  }
+  .page_perso .perso__right p {
+    width: 50%;
+  }
+  .page_perso figure {
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 }
 
