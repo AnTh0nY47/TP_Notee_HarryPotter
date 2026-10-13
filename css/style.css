@@ -129,6 +129,9 @@ footer p {
 .characters > div {
   padding: 30px;
 }
+.characters a {
+  text-decoration: none;
+}
 .characters img {
   width: 150px;
   height: 150px;
@@ -168,6 +171,10 @@ footer p {
 }
 .characters .ravenclaw:hover p {
   color: var(--blue);
+}
+
+.dead {
+  filter: grayscale(100%);
 }
 
 /* PAGE PERSO */

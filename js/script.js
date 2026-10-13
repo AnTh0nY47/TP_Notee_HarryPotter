@@ -5,7 +5,7 @@ fetch("https://hp-api.onrender.com/api/characters")
     return response.json();
   })
   .then(function (data) {
-    characters = data.slice(0, 20);
+    characters = data;
     displayCharacters(characters);
   });
 
@@ -13,6 +13,7 @@ function displayCharacters(list) {
   let html = "";
 
   for (let i = 0; i < list.length; i++) {
+    let id = list[i].id;
     let name = list[i].name;
     let image = list[i].image;
     let house = list[i].house.toLowerCase();
@@ -26,10 +27,10 @@ function displayCharacters(list) {
 
     html += `
       <div class="${house}">
-        <a href="details.html">
+        <a href="details.html?id=${id}">
           <img src="${image}" alt="${name}" />
+          <p>${name}</p>
         </a>
-        <p>${name}</p>
       </div>
     `;
   }
