@@ -44,9 +44,23 @@
         </div>
       </section>
 
+      <section class="toolbar">
+        <input type="text" id="search" placeholder="Rechercher un nom..." oninput="searchByName()" />
+        <button onclick="sortByName()">A à Z</button>
+        <button onclick="sortByAge()">Âge</button>
+        <button onclick="filterAlive(true)">Vivants</button>
+        <button onclick="filterAlive(false)">Morts</button>
+        <button onclick="showAll()">Tous</button>
+      </section>
+
       <section>
-        <h3>Characters</h3>
-        <div class="characters"></div>
+        <h3>Students</h3>
+        <div class="characters" id="students"></div>
+      </section>
+
+      <section>
+        <h3>Staff</h3>
+        <div class="characters" id="staff"></div>
       </section>
     </main>
 
